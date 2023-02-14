@@ -1,0 +1,6 @@
+{
+    "require": {
+        "chillerlan/php-qrcode": "^4.3",
+        "picqer/php-barcode-generator": "^2.2"
+    }
+}

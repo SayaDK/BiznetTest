@@ -1,0 +1,26 @@
+SEO
+1. Kondisi SEO pada website tersebut menurut saya sudah memenuhi standar SEO yang dapat memudahkan pengguna dalam mencari informasi yang berkaitan durung web tersebut pada search engine
+2. Memaksimalkan penekanan pada kata kunci dan deskripsi pada properti "meta" di halaman tersebut. Contohnya melakukan copywriting ulang terhadap beberapa halaman yang memiliki deskripsi terlalu berbelit-belit atau kurang jelas seperti pada halaman layanan dan tentang kami.
+3. Meminimalisir animasi popup pada card karena ada delay yang cukup terasa saat melakukan load halaman. adanya hero image pada tiap halaman juga sedikit memperlambat load halaman sehinga diperlukan redesign untuk halaman-halaman pada sub menu sehingga lebih efisien tanpa merusak estetika website
+
+MYSQL
+1. SELECT DAY(date) AS 'DAY', 
+SUM(case when score > 0 then score else 0 end) AS 'num_pos_scores', 
+SUM(case when score < 0 then score else 0 end) AS 'num_neg_scores' 
+FROM `assessment`
+WHERE DATE BETWEEN '2011-03-01' AND '2011-04-30'
+GROUP BY DATE;
+
+2. SELECT * 
+FROM `assessment`
+WHERE DATE BETWEEN '2011-01-01' AND '2011-06-30'
+AND score > 0;
+
+JS
+1. https://jsfiddle.net/4ut1joLm/3/
+
+Problem Solving
+1. Langkah pertama yaitu melakukan troubleshooting terhadap apa saja yang membuat aplikasi tidak dapat menghandle request lalu melakukan optimasi terhadap semua hal yang dapat dioptimasi seperti menyimpan data statis pada cache atau melakukan resize terhadap elemen2 yang dirasa terlalu besar.
+Jika memang masih terdapat hang, maka akan dilakukan pemecahan bagian aplikasi menjadi bagian yang lebih kecil sehingga saat dilakukan request, tidak semua service akan dijalankan saat itu juga. 
+2. Merapikan proses scheduling dari manipulasi data yang sedang dilakukan. Contohnya ketika ada dua user ingin mengakses data yang sama secara bersamaan, maka proses user pertama akan dilakukan terlebih dahulu sebelum proses user kedua karena dilakukan berdasarkan antrian sehingga proses kedua harus disuspend ketika proses user pertama berjalan. Apabila ketika proses user kedua dijalankan terjadi error,
+maka akan dikembalikan kode gagal yang sesuai dengan request. Hal ini terjadi karena proses penerapan logika FCFS (first come first serve).
